@@ -18,8 +18,17 @@ jobs:
             attachments: [{
               fallback: 'fallback',
               color: '#1F7629',
-              title: '*<${{ github.event.issue.html_url }}|${{ github.event.issue.title }}>*',
+              title: 'Title',
+              text: '<${{ github.event.issue.html_url }}|${{ github.event.issue.title }}>',
               fields: [{
+                title: 'ID',
+                value: '${{ github.event.issue.number }}',
+                short: true
+              },
+              {
+                title: 'Author',
+                value: '${{ github.event.issue.user.login }}',
+                short: true
               }],
               actions: [{
               }]
