@@ -21,8 +21,8 @@ jobs:
               title: 'Title',
               text: '<${{ github.event.issue.html_url }}|${{ github.event.issue.title }}>',
               fields: [{
-                title: 'ID',
-                value: '${{ github.event.issue.number }}',
+                title: 'Issue number',
+                value: '#${{ github.event.issue.number }}',
                 short: true
               },
               {
