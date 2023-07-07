@@ -1,11 +1,11 @@
-name: Issue to Slack
+name: Opend Issue Notification
 on:
   issues: 
     types: [opened]
     
 jobs:
   create-issue: 
-    name: Send issue to slack
+    name: Send opend issue notification to slack
     runs-on: ubuntu-latest 
     steps: 
     - name: Send Issue
