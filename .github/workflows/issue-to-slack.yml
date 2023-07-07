@@ -19,11 +19,11 @@ jobs:
               text: `
                       새로운 이슈가 생성되었습니다!\n
                       Title\n
-                      ${{ github.event.issue.title }}\n\n
+                      ${ github.event.issue.title }\n\n
                       
                       URL\n
                       ${{ github.event.issue.html_url }}
-                    `,
+                    `
             }]
           }
       env:
