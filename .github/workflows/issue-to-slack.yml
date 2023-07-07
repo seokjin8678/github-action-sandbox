@@ -17,7 +17,7 @@ jobs:
             attachments: [{
               color: '#1F7629',
               text: `
-                      *새로운 이슈가 생성되었습니다!*\n*ISSUE ID*\n${{ github.event.issue.number }}\n*Title*\n${{ github.event.issue.title }}\n*URL*\n${{ github.event.issue.html_url }}
+                      *새로운 이슈가 생성되었습니다!*\n*ID*\n${{ github.event.issue.number }}\n*Title*\n${{ github.event.issue.title }}\n*URL*\n${{ github.event.issue.html_url }}
                     `
             }]
           }
