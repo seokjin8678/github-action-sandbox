@@ -15,7 +15,7 @@ jobs:
         custom_payload: |
           {
             attachments: [{
-              color: 'danger',
+              color: '#7539DE',
               text: `
                       *이슈가 닫혔습니다!*\n*Title*\n${{ github.event.issue.title }}\n*URL*\n${{ github.event.issue.html_url }}
                     `
