@@ -1,4 +1,4 @@
-name: Close Issue Notification
+name: Closed Issue Notification
 on:
   issues: 
     types: [closed]
