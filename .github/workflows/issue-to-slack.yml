@@ -22,7 +22,7 @@ jobs:
                       ${{ github.event.issue.title }}\n\n
                       
                       URL\n
-                      ${github.event.issue.html_url}
+                      ${{ github.event.issue.html_url }}
                     `,
             }]
           }
