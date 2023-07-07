@@ -5,7 +5,7 @@ on:
     
 jobs:
   create-issue: 
-    name: Send closed notification to slack
+    name: Send closed issue notification to slack
     runs-on: ubuntu-latest 
     steps: 
     - name: Send Issue
