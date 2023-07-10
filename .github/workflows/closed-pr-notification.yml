@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send closed PR notification
+        if: github.event.pull_request.merged != 'true'
         id: slack
         uses: slackapi/slack-github-action@v1.24.0
         with:
@@ -19,6 +20,53 @@ jobs:
               "attachments": [
                 {
                   "color": "#CF2027",
+                  "blocks": [
+                    {
+                      "type": "section",
+                      "text": {
+                        "type": "mrkdwn",
+                        "text": "*Title*\n<${{ github.event.pull_request.html_url }}|${{ github.event.pull_request.title }}>"
+                      }
+                    },
+                    {
+                      "type": "section",
+                      "fields": [
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Base branch*\n${{ github.base_ref }}"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Compare branch*\n${{ github.head_ref }}"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*PR number*\n#${{ github.event.pull_request.number }}"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Author*\n${{ github.event.pull_request.user.login }}"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_ISSUE_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+      - name: Send merged PR notification
+        if: github.event.pull_request.merged == 'true'
+        id: slack
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+            {
+              "text": "*PR이 머지됐습니다!*",
+              "attachments": [
+                {
+                  "color": "#7539DE",
                   "blocks": [
                     {
                       "type": "section",
