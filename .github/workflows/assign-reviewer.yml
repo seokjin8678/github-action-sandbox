@@ -1,7 +1,9 @@
 name: Assign Reviewer By Label
 on:
   issues:
-    types: [ opened ]
+    types:
+      - unlabeled
+      - labeled
   pull_request:
     types:
       - unlabeled
