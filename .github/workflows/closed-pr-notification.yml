@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send closed PR notification
-        if: github.event.pull_request.merged != 'true'
+        if: github.event.pull_request.merged != true
         uses: slackapi/slack-github-action@v1.24.0
         with:
           payload: |
@@ -56,7 +56,7 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_ISSUE_WEBHOOK_URL }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
       - name: Send merged PR notification
-        if: github.event.pull_request.merged == 'true'
+        if: github.event.pull_request.merged == true
         uses: slackapi/slack-github-action@v1.24.0
         with:
           payload: |
