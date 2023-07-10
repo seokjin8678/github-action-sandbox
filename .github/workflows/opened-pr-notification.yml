@@ -28,13 +28,6 @@ jobs:
                     },
                     {
                       "type": "section",
-                      "text": {
-                        "type": "mrkdwn",
-                        "text": "*Linked Issue*\n<${{ github.event.pull_request.issue_url }}|${{ github.event.pull_request.issue.title }}>"
-                      }
-                    },
-                    {
-                      "type": "section",
                       "fields": [
                         {
                           "type": "mrkdwn",
