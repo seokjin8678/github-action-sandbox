@@ -1,4 +1,4 @@
-name: Opend Issue Notification
+name: Opened Issue Notification
 on:
   issues:
     types: [ opened ]
@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Send Issue
-        id: slack
         uses: slackapi/slack-github-action@v1.24.0
         with:
           payload: |
