@@ -31,7 +31,7 @@ jobs:
                       "fields": [
                         {
                           "type": "mrkdwn",
-                          "text": "*Issue number*\n#${{ github.event.pull_request.number }}"
+                          "text": "*PR number*\n#${{ github.event.pull_request.number }}"
                         },
                         {
                           "type": "mrkdwn",
