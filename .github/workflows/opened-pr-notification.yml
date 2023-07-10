@@ -31,11 +31,11 @@ jobs:
                       "fields": [
                         {
                           "type": "mrkdwn",
-                          "text": "*Base branch*\n#${{ github.event.pull_request.base_ref }}"
+                          "text": "*Base branch*\n${{ github.base_ref }}"
                         },
                         {
                           "type": "mrkdwn",
-                          "text": "*Compare branch*\n#${{ github.event.pull_request.head_ref }}"
+                          "text": "*Compare branch*\n${{ github.head_ref }}"
                         },
                         {
                           "type": "mrkdwn",
