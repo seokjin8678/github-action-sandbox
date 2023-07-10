@@ -31,6 +31,14 @@ jobs:
                       "fields": [
                         {
                           "type": "mrkdwn",
+                          "text": "*Base branch*\n#${{ github.event.pull_request.base_ref }}"
+                        },
+                        {
+                          "type": "mrkdwn",
+                          "text": "*Compare branch*\n#${{ github.event.pull_request.head_ref }}"
+                        },
+                        {
+                          "type": "mrkdwn",
                           "text": "*PR number*\n#${{ github.event.pull_request.number }}"
                         },
                         {
