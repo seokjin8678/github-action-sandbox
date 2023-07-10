@@ -1,4 +1,4 @@
-name: PR Notification
+name: Opened PR Notification
 on:
   pull_request:
     branches: [ main ]
@@ -6,10 +6,10 @@ on:
 
 jobs:
   create-issue:
-    name: PR notification to slack
+    name: PR opened notification to slack
     runs-on: ubuntu-latest
     steps:
-      - name: Send PR notification
+      - name: Send opened PR notification
         id: slack
         uses: slackapi/slack-github-action@v1.24.0
         with:
